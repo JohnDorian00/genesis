@@ -1,15 +1,8 @@
 <template>
-<!--  <select data-menu-->
-<!--      type="text"-->
-<!--      :value="selected"-->
-<!--      @input="$emit('update:selected', $event.target.value)">-->
-<!--    <option :value="-1">Не выбрано</option>-->
-<!--    <option v-for="(option, index) in options" :value="index" :key="index">{{option}}</option>-->
-<!--  </select>-->
     <a-select
-        ref="select"
+        class="dropdown"
+        size="large"
         v-model:value="selectLocal"
-        style="width: 320px"
         :options="optionsLocal"
         @focus="focus"
         @change="handleInput"
@@ -18,8 +11,6 @@
 </template>
 
 <script>
-import {ref} from "vue";
-
 export default {
   name: "Dropdown",
   props: {
@@ -49,11 +40,8 @@ export default {
 
     }
   },
-  mounted() {
-  },
   methods: {
     handleInput (value) {
-      console.log(value)
       this.$emit('update:selected', value)
     }
   },
@@ -61,4 +49,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.dropdown {
+  width: 300px;
+}
 </style>

@@ -1,20 +1,18 @@
 <template>
-  <button class="button"></button>
+    <a-button class="button" type="primary" :loading="isLoading" :disabled="isDisable" size="large">Создать</a-button>
 </template>
 
 <script>
 export default {
   name: "Button",
   props: {
-    isLoad: Boolean,
-    isBlock: Boolean
+    isLoading: Boolean,
+    isDisable: Boolean
+  },
+  mounted() {
   }
 }
 </script>
 
 <style scoped>
-.button {
-  width: 100px;
-  height: 50px;
-}
 </style>

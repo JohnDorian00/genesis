@@ -1,8 +1,8 @@
 <template>
   <div class="main">
     <div class="main__types-list"><Dropdown v-model:selected="entityType" :options="dropdownOptions"></Dropdown></div>
-    <div class="main__save-button"><Button @click="addItem({type: 1, id: 1})"></Button></div>
-    <div class="main__entity-view">{{entityType}}</div>
+    <div class="main__save-button"><Button :isLoading="isLoading" :isDisable="entityType === 0" @click="addItem"></Button></div>
+    <div class="main__entity-view">{{ items}}</div>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
     return {
       items: [],
       compStore: useItemsStore(),
-      isLoading: true,
+      isLoading: false,
       entityType: 0,
       dropdownOptions: ['Сделка','Контакт','Компания']
     }
@@ -29,13 +29,10 @@ export default {
       console.log(this.compStore.backendUrl)
   },
   methods: {
-    addItem: async function (item) {
-      if (item && item.type && item.id && this.dropdownOptions && this.dropdownOptions[this.entityType]) {
-        this.isLoading = true;
-        console.log(this.compStore.createLinks[this.entityType])
-
-
-        this.items.push({type: this.dropdownOptions[this.entityType], id: item.id})
+    addItem: async function () {
+      if (this.dropdownOptions && this.dropdownOptions[this.entityType - 1]) {
+        // this.isLoading = true;
+        this.items.push({type: this.dropdownOptions[this.entityType - 1], id: 1})
       }
     }
   }
@@ -54,16 +51,17 @@ export default {
 
   & > div {
     display: flex;
-    justify-content: center;
     align-items: center;
+    //justify-content: flex-end;
   }
 }
 
 .main__types-list {
-
+  justify-content: flex-end;
 }
 .main__save-button {
-
+  //justify-content: flex-start;
+  margin-left: 10px;
 }
 .main__entity-view {
   grid-area: 2 / 1 / 3 / 3 ;
