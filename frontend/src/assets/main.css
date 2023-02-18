@@ -1,0 +1,15 @@
+@import './base.css';
+@import "./normalize.css";
+
+#app {
+  margin: 0 auto;
+  font-family:  'Inter', 'Arial', sans-serif;
+
+  color: var(--color-text);
+  background: var(--color-background);
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
