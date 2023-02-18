@@ -21,7 +21,7 @@ export default {
       items: [],
       compStore: useItemsStore(),
       isLoading: true,
-      entityType: -1,
+      entityType: 0,
       dropdownOptions: ['Сделка','Контакт','Компания']
     }
   },
