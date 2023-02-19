@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import 'ant-design-vue/dist/antd.css';
-import { Select, Button } from 'ant-design-vue';
+import { Select, Button, List } from 'ant-design-vue';
 
 import './assets/main.css'
 
@@ -13,5 +13,6 @@ app.use(createPinia())
 
 app.use(Select);
 app.use(Button);
+app.use(List);
 
 app.mount('#app')

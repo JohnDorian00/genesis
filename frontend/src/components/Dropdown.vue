@@ -6,6 +6,7 @@
         :options="optionsLocal"
         @focus="focus"
         @change="handleInput"
+        :disabled="isDisable"
     >
     </a-select>
 </template>
@@ -20,7 +21,10 @@ export default {
     },
     options: {
       type: Array
-    }
+    },
+    isDisable: {
+      type: Boolean
+    },
   },
   data() {
     return {
@@ -37,7 +41,7 @@ export default {
     try {
       this.options.forEach((item, index)=>{ this.optionsLocal.push({value: index + 1, label: item}) })
     } catch (e) {
-
+      console.warn(e)
     }
   },
   methods: {

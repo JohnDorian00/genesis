@@ -14,7 +14,7 @@ export const useItemsStore = defineStore('items', {
         }
     },
     getters: {
-        backendAddress: (state) => state.backendUrl + ':' + state.backendPort + '/api',
+        backendAddress: (state) => 'http://' + state.backendUrl + ':' + state.backendPort + '/api',
         createLinks: (state) => [ state.links.linkCreateLead, state.links.linkCreateContact, state.links.linkCreateCompany ],
     },
     actions: {
