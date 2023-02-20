@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
-    "test:coverage": "vitest --environment jsdom --coverage",
+    "test:coverage": "vitest run --environment jsdom --coverage",
     "test:ui": "vitest --environment jsdom --coverage --ui",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
