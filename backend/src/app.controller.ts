@@ -21,7 +21,7 @@ export class AppController {
         )['_embedded']['leads'][0].id,
       };
     } catch (e) {
-      console.log(e);
+      console.error(e);
       throw new HttpException('Internal Server Error', 500);
     }
   }
@@ -37,7 +37,7 @@ export class AppController {
         )['_embedded']['contacts'][0].id,
       };
     } catch (e) {
-      console.log(e);
+      console.error(e);
       throw new HttpException('Internal Server Error', 500);
     }
   }
@@ -53,7 +53,7 @@ export class AppController {
         )['_embedded']['companies'][0].id,
       };
     } catch (e) {
-      console.log(e);
+      console.error(e);
       throw new HttpException('Internal Server Error', 500);
     }
   }
